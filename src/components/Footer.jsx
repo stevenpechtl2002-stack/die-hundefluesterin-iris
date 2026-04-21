@@ -63,9 +63,9 @@ export default function Footer() {
           <motion.div variants={row}>
             <h4 className="font-nunito font-800 text-white text-xs tracking-[0.25em] uppercase mb-5">Kontakt</h4>
             <div className="space-y-3 font-nunito text-gray-500 text-sm">
-              <p className="flex items-start gap-2"><span className="mt-0.5">📍</span><span>Musterstraße 1<br/>10115 Berlin</span></p>
-              <p className="flex items-center gap-2"><span>📞</span><a href="tel:030123456" className="hover:text-rosa transition-colors">030 123456</a></p>
-              <p className="flex items-center gap-2"><span>✉️</span><a href="mailto:info@pfoten-paradies.de" className="hover:text-rosa transition-colors text-xs">info@pfoten-paradies.de</a></p>
+              <p className="flex items-start gap-2"><span className="mt-0.5">📍</span><span>Deutz-Mülheimer Str. 179<br/>51063 Köln</span></p>
+              <p className="flex items-center gap-2"><span>📞</span><span className="text-gray-500">Bitte eintragen</span></p>
+              <p className="flex items-center gap-2"><span>✉️</span><span className="text-gray-500 text-xs">Bitte eintragen</span></p>
             </div>
           </motion.div>
 

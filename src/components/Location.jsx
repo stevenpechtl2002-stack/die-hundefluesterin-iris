@@ -12,20 +12,20 @@ export default function Location() {
             Unser Salon
           </span>
           <h2 className="font-pacifico text-3xl md:text-4xl text-gray-900 mt-2">
-            Besuchen Sie uns in Berlin 📍
+            Besuchen Sie uns in Köln 📍
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
 
-          {/* Map placeholder */}
+          {/* Map */}
           <motion.div
             className="rounded-3xl overflow-hidden relative"
-            style={{ height:380, background:'linear-gradient(135deg,#FFB5D815,#C5B5EA15)', boxShadow:'0 8px 40px rgba(0,0,0,0.07)' }}
+            style={{ height:380, boxShadow:'0 8px 40px rgba(0,0,0,0.07)' }}
             initial={{ opacity:0, x:-30 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} transition={{ duration:0.7 }}>
             <iframe
               title="Hundesalon Fellraum Standort"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=13.38,52.52,13.42,52.54&layer=mapnik&marker=52.530,13.400"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=6.9837824,50.9471582,7.0037824,50.9671582&layer=mapnik&marker=50.9571582,6.9937824"
               className="w-full h-full border-0"
               style={{ borderRadius:24 }}
             />
@@ -42,16 +42,16 @@ export default function Location() {
                   🐾
                 </div>
                 <div>
-                  <h3 className="font-pacifico text-xl text-gray-900">Hundesalon Fellraum Berlin</h3>
-                  <p className="font-nunito text-gray-400 text-sm">Berlin-Mitte</p>
+                  <h3 className="font-pacifico text-xl text-gray-900">Hundesalon Fellraum</h3>
+                  <p className="font-nunito text-gray-400 text-sm">Köln-Mülheim</p>
                 </div>
               </div>
 
               <div className="space-y-4 font-nunito text-sm">
                 {[
-                  { icon:'📍', label:'Adresse', value:'Musterstraße 1, 10115 Berlin' },
-                  { icon:'📞', label:'Telefon', value:'030 123456', href:'tel:030123456' },
-                  { icon:'✉️', label:'E-Mail', value:'info@pfoten-paradies.de', href:'mailto:info@pfoten-paradies.de' },
+                  { icon:'📍', label:'Adresse', value:'Deutz-Mülheimer Str. 179, 51063 Köln' },
+                  { icon:'📞', label:'Telefon', value:'Bitte eintragen', href:null },
+                  { icon:'✉️', label:'E-Mail', value:'Bitte eintragen', href:null },
                 ].map(({icon,label,value,href}) => (
                   <div key={label} className="flex items-start gap-3">
                     <span className="text-base mt-0.5">{icon}</span>
@@ -82,11 +82,15 @@ export default function Location() {
                 </div>
               </div>
 
-              {/* Today open badge */}
-              <div className="flex items-center gap-2 p-3 rounded-xl" style={{ background:'#B5EAD730' }}>
-                <div className="w-2 h-2 rounded-full bg-green-400" style={{ boxShadow:'0 0 6px #4ade80' }} />
-                <span className="font-nunito font-700 text-green-700 text-sm">Heute geöffnet · bis 18:00 Uhr</span>
-              </div>
+              {/* Google Maps link */}
+              <motion.a
+                href="https://www.google.com/maps/place/Hundesalon+Fellraum/@50.9571582,6.9912075,17z"
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 p-3 rounded-xl font-nunito font-700 text-sm"
+                style={{ background:'linear-gradient(135deg,#FFB5D810,#C5B5EA10)', border:'1px solid #FFB5D830', color:'#c07090' }}
+                whileHover={{ scale:1.02 }}>
+                📍 In Google Maps öffnen
+              </motion.a>
             </div>
           </motion.div>
 
