@@ -74,10 +74,10 @@ export default function Hero() {
 
       {/* Dunkler Gradient-Overlay für Lesbarkeit */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)'
+        background: 'linear-gradient(to right, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.12) 50%, rgba(0,0,0,0.03) 100%)'
       }} />
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%)'
+        background: 'linear-gradient(to top, rgba(0,0,0,0.18) 0%, transparent 50%)'
       }} />
 
       {/* ── CONTENT ── */}
