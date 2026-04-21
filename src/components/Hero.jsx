@@ -76,7 +76,13 @@ export default function Hero() {
 
       {/* ── CONTENT ── */}
       <div className="relative max-w-7xl mx-auto px-8 md:px-16 py-24 w-full">
-        <div className="max-w-xl">
+        <div className="max-w-xl rounded-3xl p-8 md:p-10" style={{
+          background: 'rgba(255,255,255,0.12)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255,255,255,0.25)',
+          boxShadow: '0 8px 40px rgba(0,0,0,0.15)'
+        }}>
 
           {/* Tag badge */}
           <motion.div {...stagger(0.1)} className="mb-6">
