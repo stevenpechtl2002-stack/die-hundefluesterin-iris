@@ -6,7 +6,6 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import Services from './components/Services'
 import About from './components/About'
-import BeforeAfter from './components/BeforeAfter'
 import Reviews from './components/Reviews'
 import Pricing from './components/Pricing'
 import Location from './components/Location'
@@ -30,11 +29,10 @@ export default function App() {
           <Features />
           <Services />
           <About />
-          <BeforeAfter />
           <Pricing />
           <Reviews />
-          <Location />
           <Booking />
+          <Location />
           <Instagram />
         </main>
         <Footer />
