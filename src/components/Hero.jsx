@@ -61,7 +61,7 @@ export default function Hero() {
         initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ duration: 0.3 }}>
         <video src="/hund.mp4" autoPlay loop muted playsInline
           className="w-full h-full object-cover" style={{ filter: 'brightness(0.85)' }}
-          onLoadedMetadata={(e) => { e.target.currentTime = 3 }} />
+          onLoadedMetadata={(e) => { e.target.currentTime = 5 }} />
       </motion.div>
 
       {/* CONTENT — zentriert, mit Navbar-Abstand oben */}
