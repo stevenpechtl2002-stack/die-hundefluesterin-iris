@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const stats = [
   { value: 500, suffix: '+', label: 'Glückliche Hunde', icon: '🐶' },
@@ -25,12 +25,8 @@ function CountUp({ target, suffix, run }) {
 }
 
 export default function About() {
-  const imgRef = useRef(null)
   const sectionRef = useRef(null)
   const [run, setRun] = useState(false)
-
-  const { scrollYProgress } = useScroll({ target: imgRef, offset: ['start end', 'end start'] })
-  const imgY = useTransform(scrollYProgress, [0, 1], ['-10%', '10%'])
 
   useEffect(() => {
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setRun(true) }, { threshold: 0.3 })
