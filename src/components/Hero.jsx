@@ -54,13 +54,9 @@ export default function Hero() {
           style={{ display: 'block' }}
         />
 
-        {/* Gradient mask: fades video into white background on left edge */}
+        {/* Gradient mask: thin fade on left edge only, dog stays fully visible */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.9) 12%, rgba(255,255,255,0.4) 30%, transparent 55%)'
-        }} />
-        {/* Top + bottom fades */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, transparent 18%, transparent 82%, rgba(255,255,255,0.6) 100%)'
+          background: 'linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.7) 6%, rgba(255,255,255,0.1) 16%, transparent 26%)'
         }} />
       </motion.div>
 
