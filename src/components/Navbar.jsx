@@ -44,7 +44,7 @@ export default function Navbar() {
           </svg>
         </motion.div>
         <span className="font-pacifico text-xl" style={{ color: scrolled ? '#333' : 'white' }}>
-          Hundesalon Fellraum
+          Die Hundeflüsterin Iris
         </span>
       </a>
 

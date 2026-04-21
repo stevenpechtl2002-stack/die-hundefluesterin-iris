@@ -9,10 +9,10 @@ export default function Location() {
           initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}>
           <span className="inline-block font-nunito text-xs font-700 tracking-[0.25em] uppercase mb-3 px-4 py-1.5 rounded-full"
             style={{ background:'#B5EAD720', color:'#8dd5bb' }}>
-            Unser Salon
+            Unsere Hundeschule
           </span>
           <h2 className="font-pacifico text-3xl md:text-4xl text-gray-900 mt-2">
-            Besuchen Sie uns in Köln 📍
+            Besuchen Sie uns in Karlsbad 📍
           </h2>
         </motion.div>
 
@@ -25,7 +25,7 @@ export default function Location() {
             initial={{ opacity:0, x:-30 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} transition={{ duration:0.7 }}>
             <iframe
               title="Hundesalon Fellraum Standort"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=6.9837824,50.9471582,7.0037824,50.9671582&layer=mapnik&marker=50.9571582,6.9937824"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=8.484,48.858,8.524,48.878&layer=mapnik&marker=48.868,8.504"
               className="w-full h-full border-0"
               style={{ borderRadius:24 }}
             />
@@ -42,15 +42,15 @@ export default function Location() {
                   🐾
                 </div>
                 <div>
-                  <h3 className="font-pacifico text-xl text-gray-900">Hundesalon Fellraum</h3>
-                  <p className="font-nunito text-gray-400 text-sm">Köln-Mülheim</p>
+                  <h3 className="font-pacifico text-xl text-gray-900">Die Hundeflüsterin Iris</h3>
+                  <p className="font-nunito text-gray-400 text-sm">Karlsbad</p>
                 </div>
               </div>
 
               <div className="space-y-4 font-nunito text-sm">
                 {[
-                  { icon:'📍', label:'Adresse', value:'Deutz-Mülheimer Str. 179, 51063 Köln' },
-                  { icon:'📞', label:'Telefon', value:'0160 99050581', href:'tel:016099050581' },
+                  { icon:'📍', label:'Adresse', value:'Gartenstraße 37, 76307 Karlsbad' },
+                  { icon:'📞', label:'Telefon', value:'0173 6853692', href:'tel:01736853692' },
                   { icon:'✉️', label:'E-Mail', value:'Bitte eintragen', href:null },
                 ].map(({icon,label,value,href}) => (
                   <div key={label} className="flex items-start gap-3">
@@ -84,7 +84,7 @@ export default function Location() {
 
               {/* Google Maps link */}
               <motion.a
-                href="https://www.google.com/maps/place/Hundesalon+Fellraum/@50.9571582,6.9912075,17z"
+                href="https://www.google.com/maps/place/Die+Hundeflüsterin+Iris/@48.8680057,8.5013465,17z"
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 p-3 rounded-xl font-nunito font-700 text-sm"
                 style={{ background:'linear-gradient(135deg,#FFB5D810,#C5B5EA10)', border:'1px solid #FFB5D830', color:'#c07090' }}

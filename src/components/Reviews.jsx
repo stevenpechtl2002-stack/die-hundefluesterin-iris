@@ -2,12 +2,12 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
 const reviews = [
-  { stars:5, text:'Mein Bello sieht aus wie ein Filmstar! Super freundlich und sehr professionell. Kommen immer wieder!', author:"Bello's Mama", dog:'Bello 🐕', avatar:'👩‍🦰' },
-  { stars:5, text:'Max war noch nie so schön! Er war total entspannt. Das Team ist einfach fantastisch — absolute Empfehlung!', author:"Luna's Papa", dog:'Max 🐩', avatar:'👨‍🦱' },
-  { stars:5, text:'Super freundliches Team und tolle Atmosphäre! Mia fühlt sich hier immer wohl. Wir kommen jeden Monat!', author:"Mia's Besitzerin", dog:'Mia 🦮', avatar:'👩‍🦳' },
-  { stars:5, text:'Rocky sieht nach jedem Besuch traumhaft aus. Schnell, professionell, liebevoll. Immer wieder gerne!', author:"Rocky's Mama", dog:'Rocky 🐕', avatar:'👩' },
-  { stars:5, text:'Beste Hundefriseurin Berlins! Coco liebt es hierher zu kommen. Toller Service, faire Preise!', author:"Coco's Papa", dog:'Coco 🐶', avatar:'👨‍🦳' },
-  { stars:5, text:'Leo war beim ersten Besuch nervös — nach 10 Minuten war er total entspannt. Einfach toll!', author:"Leo's Familie", dog:'Leo 🐾', avatar:'👨‍👩‍👦' },
+  { stars:5, text:'Iris ist einfach fantastisch! Unser Rüde war sehr ängstlich, nach nur 3 Einheiten hat er sich so positiv verändert. Absolute Empfehlung!', author:"Bello's Mama", dog:'Bello 🐕', avatar:'👩‍🦰' },
+  { stars:5, text:'Das Welpentraining war super! Max hat so viel gelernt und Iris erklärt alles so verständlich. Wir sind begeistert!', author:"Max's Papa", dog:'Max 🐩', avatar:'👨‍🦱' },
+  { stars:5, text:'Endlich eine Trainerin, die wirklich auf den Hund eingeht. Mia hört jetzt viel besser und ist ausgeglichener. Danke Iris!', author:"Mia's Besitzerin", dog:'Mia 🦮', avatar:'👩‍🦳' },
+  { stars:5, text:'Rocky hatte Probleme mit anderen Hunden. Dank Iris haben wir tolle Fortschritte gemacht. Professionell und einfühlsam!', author:"Rocky's Mama", dog:'Rocky 🐕', avatar:'👩' },
+  { stars:5, text:'Beste Hundetrainerin in der Region! Coco liebt die Trainingsstunden. Tolle Methoden, faire Preise, herzliche Atmosphäre!', author:"Coco's Papa", dog:'Coco 🐶', avatar:'👨‍🦳' },
+  { stars:5, text:'Das Einzeltraining hat uns so geholfen. Leo zieht kaum noch an der Leine. Iris ist geduldig und sehr kompetent!', author:"Leo's Familie", dog:'Leo 🐾', avatar:'👨‍👩‍👦' },
 ]
 
 function Card({ r }) {
@@ -59,10 +59,10 @@ export default function Reviews() {
           </div>
           <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white"
             style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
-            <span className="font-pacifico text-3xl text-gray-900">4.9</span>
+            <span className="font-pacifico text-3xl text-gray-900">5.0</span>
             <div>
               <div className="flex text-yellow-400 text-sm">★★★★★</div>
-              <p className="font-nunito text-gray-400 text-xs">387 Google Bewertungen</p>
+              <p className="font-nunito text-gray-400 text-xs">14 Google Bewertungen</p>
             </div>
           </div>
         </motion.div>

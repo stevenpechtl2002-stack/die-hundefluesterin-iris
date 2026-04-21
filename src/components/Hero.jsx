@@ -110,34 +110,34 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full"
               style={{ background: 'rgba(255,181,216,0.15)', border: '1px solid rgba(255,181,216,0.35)' }}>
               <span className="text-sm">🐾</span>
-              <span className="font-nunito font-700 text-xs tracking-[0.25em] uppercase" style={{ color: '#d4789a' }}>Premium Hundesalon · Köln</span>
+              <span className="font-nunito font-700 text-xs tracking-[0.25em] uppercase" style={{ color: '#d4789a' }}>Hundeschule · Karlsbad</span>
             </div>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
             className="font-pacifico leading-[1.05] mb-6"
-            style={{ fontSize: 'clamp(3rem, 5.5vw, 6.5rem)', color: '#1a1025' }}
+            style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5.5rem)', color: '#1a1025' }}
             initial={{ opacity: 0, y: 50 }}
             animate={ready ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
-            Hundesalon<br />
+            Die Hundeflüsterin<br />
             <span style={{
               background: 'linear-gradient(135deg, #FFB5D8, #C5B5EA)',
               WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>Fellraum</span>
+            }}>Iris</span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p {...stagger(0.42)}
             className="font-nunito font-400 mb-7 leading-relaxed"
             style={{ fontSize: 'clamp(1rem, 1.3vw, 1.15rem)', maxWidth: '38ch', color: '#7a6b8a' }}>
-            Ihr Liebling in den besten Händen — professionell, liebevoll, stressfrei.
+            Professionelle Hundeschule in Karlsbad — liebevolle Ausbildung für Ihren Vierbeiner.
           </motion.p>
 
           {/* Trust chips */}
           <motion.div {...stagger(0.52)} className="flex flex-wrap gap-2 mb-8">
-            {['IHK-zertifiziert', 'Naturprodukte', 'Alle Rassen'].map(chip => (
+            {['Erfahrene Trainerin', 'Positive Verstärkung', 'Alle Rassen'].map(chip => (
               <span key={chip} className="font-nunito font-600 text-xs px-3.5 py-1.5 rounded-full"
                 style={{ background: '#f5f0ff', border: '1px solid #e8dff5', color: '#9b85c4' }}>
                 {chip}
@@ -157,7 +157,7 @@ export default function Hero() {
               </svg>
               <div className="flex text-yellow-400 text-sm">★★★★★</div>
               <span className="font-nunito font-800 text-sm" style={{ color: '#1a1025' }}>4.9</span>
-              <span className="font-nunito text-xs" style={{ color: '#b0a0c0' }}>· 387 Bewertungen</span>
+              <span className="font-nunito text-xs" style={{ color: '#b0a0c0' }}>· 14 Bewertungen</span>
             </div>
             <div className="flex items-center gap-1.5 px-3 py-2.5 rounded-xl"
               style={{ background: '#f0fdf8', border: '1px solid #bbf7d0' }}>
@@ -175,21 +175,21 @@ export default function Hero() {
               whileTap={{ scale: 0.97 }}>
               Termin buchen →
             </motion.a>
-            <motion.a href="tel:016099050581"
+            <motion.a href="tel:01736853692"
               className="font-nunito font-700 text-sm px-7 py-4 rounded-2xl flex items-center gap-2"
               style={{ background: 'white', border: '1px solid #ece8f5', color: '#5a4a6a', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
               whileHover={{ scale: 1.05, boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}
               whileTap={{ scale: 0.97 }}>
-              <span>📞</span> 0160 99050581
+              <span>📞</span> 0173 6853692
             </motion.a>
           </motion.div>
 
           {/* Stats */}
           <motion.div {...stagger(0.9)} className="flex gap-8 mt-10 pt-8"
             style={{ borderTop: '1px solid #ede8f5' }}>
-            <StatItem target={500} suffix="+" label="Zufriedene Hunde" duration={4000} />
-            <StatItem target={8} suffix=" J." label="Erfahrung" duration={3500} />
-            <StatItem target={4.9} suffix="★" label="Google Rating" decimals={1} duration={3000} />
+            <StatItem target={200} suffix="+" label="Ausgebildete Hunde" duration={4000} />
+            <StatItem target={10} suffix=" J." label="Erfahrung" duration={3500} />
+            <StatItem target={5.0} suffix="★" label="Google Rating" decimals={1} duration={3000} />
           </motion.div>
 
         </div>
@@ -229,7 +229,7 @@ export default function Hero() {
           className="flex items-center gap-2">
           <span className="text-xl">✂️</span>
           <div>
-            <p className="font-nunito font-800 text-xs" style={{ color: '#1a1025' }}>Profi-Styling</p>
+            <p className="font-nunito font-800 text-xs" style={{ color: '#1a1025' }}>Profi-Training</p>
             <p className="font-nunito text-xs" style={{ color: '#b0a0c0' }}>Alle Rassen</p>
           </div>
         </motion.div>
@@ -249,8 +249,8 @@ export default function Hero() {
           className="flex items-center gap-2">
           <span className="text-xl">🌿</span>
           <div>
-            <p className="font-nunito font-800 text-xs" style={{ color: '#1a1025' }}>Naturprodukte</p>
-            <p className="font-nunito text-xs" style={{ color: '#b0a0c0' }}>Sanft & sicher</p>
+            <p className="font-nunito font-800 text-xs" style={{ color: '#1a1025' }}>Positive Methoden</p>
+            <p className="font-nunito text-xs" style={{ color: '#b0a0c0' }}>Liebevoll & effektiv</p>
           </div>
         </motion.div>
       </motion.div>

@@ -43,10 +43,10 @@ export default function Footer() {
                 <ellipse cx="82" cy="52" rx="10" ry="12" fill="#FFB5D8"/>
                 <path d="M50,88 C36,88 26,79 26,68 C26,57 32,54 38,54 C42,54 46,56 50,59 C54,56 58,54 62,54 C68,54 74,57 74,68 C74,79 64,88 50,88 Z" fill="#FFB5D8"/>
               </svg>
-              <h3 className="font-pacifico text-2xl" style={{ color:'#FFB5D8' }}>Hundesalon Fellraum</h3>
+              <h3 className="font-pacifico text-2xl" style={{ color:'#FFB5D8' }}>Die Hundeflüsterin Iris</h3>
             </div>
             <p className="font-nunito text-gray-500 leading-relaxed mb-6 max-w-xs">
-              Berlins Premium Hundesalon — professionelle Pflege mit Liebe und Leidenschaft seit 2015.
+              Professionelle Hundeschule in Karlsbad — mit Herz, Erfahrung und positiver Verstärkung.
             </p>
             <div className="flex gap-3">
               {['IG','FB','TK'].map(s => (
@@ -63,8 +63,8 @@ export default function Footer() {
           <motion.div variants={row}>
             <h4 className="font-nunito font-800 text-white text-xs tracking-[0.25em] uppercase mb-5">Kontakt</h4>
             <div className="space-y-3 font-nunito text-gray-500 text-sm">
-              <p className="flex items-start gap-2"><span className="mt-0.5">📍</span><span>Deutz-Mülheimer Str. 179<br/>51063 Köln</span></p>
-              <p className="flex items-center gap-2"><span>📞</span><a href="tel:016099050581" className="hover:text-rosa transition-colors">0160 99050581</a></p>
+              <p className="flex items-start gap-2"><span className="mt-0.5">📍</span><span>Gartenstraße 37<br/>76307 Karlsbad</span></p>
+              <p className="flex items-center gap-2"><span>📞</span><a href="tel:01736853692" className="hover:text-rosa transition-colors">0173 6853692</a></p>
               <p className="flex items-center gap-2"><span>✉️</span><span className="text-gray-500 text-xs">Bitte eintragen</span></p>
             </div>
           </motion.div>
@@ -90,7 +90,7 @@ export default function Footer() {
         </div>
 
         <motion.div variants={row} className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-nunito text-gray-600 text-xs">© 2024 Hundesalon Fellraum. Alle Rechte vorbehalten.</p>
+          <p className="font-nunito text-gray-600 text-xs">© 2024 Die Hundeflüsterin Iris. Alle Rechte vorbehalten.</p>
           <div className="flex gap-6">
             {['Impressum','Datenschutz','AGB'].map(l=>(
               <a key={l} href="#" className="font-nunito text-gray-600 text-xs hover:text-gray-400 transition-colors">{l}</a>

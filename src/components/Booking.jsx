@@ -11,7 +11,7 @@ export default function Booking() {
           viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
           <span className="inline-block font-nunito text-xs font-700 tracking-[0.25em] uppercase mb-3 px-4 py-1.5 rounded-full"
             style={{ background: '#FFB5D818', color: '#FFB5D8' }}>Termin buchen</span>
-          <h2 className="font-pacifico text-3xl md:text-5xl text-gray-900 mt-2">Ihren Wunschtermin sichern</h2>
+          <h2 className="font-pacifico text-3xl md:text-5xl text-gray-900 mt-2">Trainingsplatz sichern</h2>
           <p className="font-nunito text-gray-400 mt-4">Wählen Sie einfach Ihren Wunschtermin</p>
         </motion.div>
 

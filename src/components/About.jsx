@@ -2,9 +2,9 @@ import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Glückliche Hunde', icon: '🐶' },
-  { value: 8,   suffix: ' J.', label: 'Erfahrung', icon: '🏆' },
-  { value: 4.9, suffix: '★', label: 'Bewertung', icon: '⭐' },
+  { value: 200, suffix: '+', label: 'Ausgebildete Hunde', icon: '🐶' },
+  { value: 10,  suffix: ' J.', label: 'Erfahrung', icon: '🏆' },
+  { value: 5.0, suffix: '★', label: 'Bewertung', icon: '⭐' },
 ]
 
 function CountUp({ target, suffix, run }) {
@@ -55,8 +55,8 @@ export default function About() {
           </div>
 
           <div className="space-y-4 font-nunito text-gray-500 leading-relaxed">
-            <p>Willkommen im <strong className="text-gray-800">Hundesalon Fellraum</strong> — dem Ort, wo jeder Hund wie ein König behandelt wird. Seit 2015 pflegen wir Vierbeiner aller Rassen mit professionellem Know-how und echter Zuneigung.</p>
-            <p>Unser Team aus zertifizierten Hundepflegern nimmt sich Zeit für jeden Hund. Wir schaffen eine entspannte Atmosphäre, damit der Friseurbesuch kein Stress wird — sondern ein Highlight der Woche.</p>
+            <p>Willkommen bei <strong className="text-gray-800">Die Hundeflüsterin Iris</strong> — Ihrer professionellen Hundeschule in Karlsbad. Mit viel Einfühlungsvermögen und modernen Trainingsmethoden begleite ich Sie und Ihren Hund zu einem harmonischen Miteinander.</p>
+            <p>Als erfahrene Hundetrainerin arbeite ich ausschließlich mit positiver Verstärkung. Jeder Hund ist einzigartig — deshalb passe ich jedes Training individuell an Charakter und Bedürfnisse Ihres Vierbeiners an.</p>
           </div>
 
           {/* Stats */}
@@ -94,14 +94,14 @@ export default function About() {
 
           <motion.div className="absolute -bottom-6 -left-6 glass-pink rounded-3xl px-5 py-4 shadow-lg"
             animate={{ y: [0, -8, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}>
-            <p className="font-pacifico text-lg" style={{ color: '#FFB5D8' }}>❤️ Seit 2015</p>
-            <p className="font-nunito text-gray-500 text-xs font-600">Mit Liebe dabei</p>
+            <p className="font-pacifico text-lg" style={{ color: '#FFB5D8' }}>❤️ Mit Herz dabei</p>
+            <p className="font-nunito text-gray-500 text-xs font-600">Positive Methoden</p>
           </motion.div>
 
           <motion.div className="absolute -top-4 -right-4 glass rounded-2xl px-5 py-3 shadow-md"
             animate={{ y: [0, -6, 0] }} transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}>
-            <p className="font-nunito font-800 text-gray-800">4.9 ⭐</p>
-            <p className="font-nunito text-gray-400 text-xs">387 Bewertungen</p>
+            <p className="font-nunito font-800 text-gray-800">5.0 ⭐</p>
+            <p className="font-nunito text-gray-400 text-xs">14 Bewertungen</p>
           </motion.div>
 
           <div className="absolute -z-10 -bottom-10 -right-10 w-60 h-60 rounded-full opacity-25"
