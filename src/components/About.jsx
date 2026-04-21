@@ -86,11 +86,14 @@ export default function About() {
           viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
 
           <div className="rounded-[2.5rem] overflow-hidden relative" style={{ height: 520 }}>
-            <motion.img ref={imgRef}
-              src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800&q=80"
-              alt="Hundesalon Team"
+            <video
+              src="/husky.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
-              style={{ y: imgY, scale: 1.12 }} />
+            />
           </div>
 
           <motion.div className="absolute -bottom-6 -left-6 glass-pink rounded-3xl px-5 py-4 shadow-lg"
