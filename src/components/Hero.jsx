@@ -81,7 +81,7 @@ export default function Hero() {
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full"
                   style={{ background: 'rgba(255,181,216,0.2)', border: '1px solid rgba(255,181,216,0.5)' }}>
                   <span className="text-xs">🐾</span>
-                  <span className="font-nunito font-700 text-xs tracking-[0.2em] uppercase" style={{ color: '#FFB5D8' }}>Hundeschule · Karlsbad</span>
+                  <span className="font-nunito font-700 text-xs tracking-[0.2em] uppercase" style={{ color: '#c0558a' }}>Hundeschule · Karlsbad</span>
                 </div>
               </motion.div>
 
