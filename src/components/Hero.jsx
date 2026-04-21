@@ -77,9 +77,9 @@ export default function Hero() {
         background: 'radial-gradient(ellipse 50% 60% at 10% 40%, #F8F4FF 0%, transparent 60%)'
       }} />
 
-      {/* ── VIDEO: fills right half, bleeds to screen edge ── */}
+      {/* ── VIDEO: desktop only — fills right half, bleeds to screen edge ── */}
       <motion.div
-        className="absolute top-0 right-0 h-full"
+        className="absolute top-0 right-0 h-full hidden md:block"
         style={{ width: '58%', x: px, y: py }}
         initial={{ opacity: 0 }}
         animate={ready ? { opacity: 1 } : {}}
@@ -194,6 +194,25 @@ export default function Hero() {
 
         </div>
       </div>
+
+      {/* ── VIDEO: mobile only — contained block below text ── */}
+      <motion.div
+        className="md:hidden w-full px-6 pb-10"
+        initial={{ opacity: 0, y: 20 }}
+        animate={ready ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.5, duration: 0.8 }}>
+        <div className="rounded-3xl overflow-hidden w-full"
+          style={{ aspectRatio: '4/3', boxShadow: '0 12px 40px rgba(255,181,216,0.25)' }}>
+          <video
+            src="/hund.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </motion.div>
 
       {/* Floating badges over video */}
       <motion.div
