@@ -24,7 +24,7 @@ export default function Location() {
             style={{ height:380, boxShadow:'0 8px 40px rgba(0,0,0,0.07)' }}
             initial={{ opacity:0, x:-30 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} transition={{ duration:0.7 }}>
             <iframe
-              title="Hundesalon Fellraum Standort"
+              title="Die Hundeflüsterin Iris Standort"
               src="https://www.openstreetmap.org/export/embed.html?bbox=8.484,48.858,8.524,48.878&layer=mapnik&marker=48.868,8.504"
               className="w-full h-full border-0"
               style={{ borderRadius:24 }}

@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
 
 const items = [
-  { icon: '🏆', title: 'Zertifizierte Experten', desc: 'IHK-zertifizierte Hundefriseure mit jahrelanger Erfahrung für alle Rassen.' },
-  { icon: '🌿', title: 'Naturprodukte', desc: 'Hypoallergene, tierfreundliche Shampoos und Pflegemittel — sanft zur Haut.' },
-  { icon: '❤️', title: 'Stressfreie Umgebung', desc: 'Ruhige Atmosphäre, kein Zwinger — Ihr Hund fühlt sich bei uns wohl.' },
-  { icon: '✂️', title: 'Alle Rassen & Größen', desc: 'Von XS bis XL — wir haben Erfahrung mit jeder Rasse und jedem Fell.' },
-  { icon: '📅', title: 'Einfache Buchung', desc: 'Online buchen in 30 Sekunden, Bestätigung per SMS, kein Warten.' },
-  { icon: '📍', title: 'Zentral in Berlin', desc: '3 Minuten vom S-Bahnhof, gut erreichbar, Parkplätze direkt vor der Tür.' },
+  { icon: '🏆', title: 'Erfahrene Trainerin', desc: 'Iris bringt jahrelange Erfahrung in der Hundeausbildung mit — einfühlsam und kompetent.' },
+  { icon: '❤️', title: 'Positive Verstärkung', desc: 'Kein Zwang, keine Strafe — Lernen durch Belohnung macht Ihren Hund glücklich und motiviert.' },
+  { icon: '🐾', title: 'Alle Rassen & Altersgruppen', desc: 'Vom Welpen bis zum Seniorhund — jeder Hund bekommt das passende Training.' },
+  { icon: '🤝', title: 'Individuell abgestimmt', desc: 'Kein Schema F — jedes Training wird auf Hund und Mensch persönlich zugeschnitten.' },
+  { icon: '📅', title: 'Flexible Termine', desc: 'Online buchen in 30 Sekunden, Bestätigung per SMS, kein Warten.' },
+  { icon: '📍', title: 'Zentral in Karlsbad', desc: 'Gut erreichbar in Gartenstraße 37, Parkplätze direkt vor Ort.' },
 ]
 
 const container = {
@@ -31,7 +31,7 @@ export default function Features() {
           <span className="inline-block font-nunito text-xs font-700 tracking-[0.25em] uppercase mb-3 px-4 py-1.5 rounded-full"
             style={{ background: '#FFB5D818', color: '#FFB5D8' }}>Warum wir?</span>
           <h2 className="font-pacifico text-3xl md:text-5xl text-gray-900 mt-2">Das macht uns besonders</h2>
-          <p className="font-nunito text-gray-400 mt-4 max-w-lg mx-auto">Weil Ihr Hund mehr als nur eine Behandlung verdient — er verdient ein Erlebnis.</p>
+          <p className="font-nunito text-gray-400 mt-4 max-w-lg mx-auto">Weil Ihr Hund mehr als nur Kommandos verdient — er verdient eine echte Verbindung zu Ihnen.</p>
         </motion.div>
 
         <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"

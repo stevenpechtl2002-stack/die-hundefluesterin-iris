@@ -75,7 +75,7 @@ function SliderCard({ pair, index }) {
         />
         {/* Label after */}
         <div className="absolute top-3 right-3 z-10 glass rounded-xl px-3 py-1">
-          <span className="font-nunito font-700 text-xs" style={{ color: '#8dd5bb' }}>NACHHER ✨</span>
+          <span className="font-nunito font-700 text-xs" style={{ color: '#8dd5bb' }}>NACH DEM TRAINING ✨</span>
         </div>
 
         {/* Before (clipped left) */}
@@ -92,7 +92,7 @@ function SliderCard({ pair, index }) {
           />
           {/* Label before */}
           <div className="absolute top-3 left-3 z-10 glass rounded-xl px-3 py-1">
-            <span className="font-nunito font-700 text-xs text-gray-500">VORHER</span>
+            <span className="font-nunito font-700 text-xs text-gray-500">VOR DEM TRAINING</span>
           </div>
         </div>
 
@@ -125,13 +125,13 @@ export default function BeforeAfter() {
           viewport={{ once: true }}
         >
           <span className="inline-block font-nunito text-sm font-700 tracking-widest uppercase mb-3 px-4 py-1.5 rounded-full" style={{ background: '#FFDAC120', color: '#f0aa80' }}>
-            Transformationen
+            Trainingserfolge
           </span>
           <h2 className="font-pacifico text-4xl md:text-5xl text-gray-800 mt-2">
             Vorher / Nachher 🪄
           </h2>
           <p className="font-nunito text-gray-500 mt-4 max-w-xl mx-auto">
-            Ziehen Sie den Schieberegler und sehen Sie die zauberhafte Verwandlung
+            Ziehen Sie den Schieberegler und sehen Sie die beeindruckenden Trainingserfolge
           </p>
         </motion.div>
 
