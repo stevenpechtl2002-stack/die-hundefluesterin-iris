@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function useCountUp(target, duration = 1800, decimals = 0) {
   const [count, setCount] = useState(0)
@@ -37,27 +37,15 @@ function StatItem({ target, suffix, label, decimals = 0, duration = 1600 }) {
         background: 'linear-gradient(135deg,#FFB5D8,#C5B5EA)',
         WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent'
       }}>{decimals > 0 ? count.toFixed(decimals) : Math.floor(count)}{suffix}</p>
-      <p className="font-nunito text-xs mt-0.5" style={{ color: '#b0a0c0' }}>{label}</p>
+      <p className="font-nunito text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.6)' }}>{label}</p>
     </div>
   )
 }
 
 export default function Hero() {
   const [ready, setReady] = useState(false)
-  const rawX = useMotionValue(0)
-  const rawY = useMotionValue(0)
-  const px = useSpring(rawX, { stiffness: 60, damping: 28 })
-  const py = useSpring(rawY, { stiffness: 60, damping: 28 })
 
-  useEffect(() => {
-    setReady(true)
-    const h = (e) => {
-      rawX.set((e.clientX / window.innerWidth - 0.5) * 14)
-      rawY.set((e.clientY / window.innerHeight - 0.5) * 8)
-    }
-    window.addEventListener('mousemove', h)
-    return () => window.removeEventListener('mousemove', h)
-  }, [rawX, rawY])
+  useEffect(() => { setReady(true) }, [])
 
   const stagger = (delay) => ({
     initial: { opacity: 0, y: 28 },
@@ -66,25 +54,14 @@ export default function Hero() {
   })
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: '#ffffff' }}>
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
 
-      {/* Soft background tints matching video's light palette */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 70% 80% at 80% 50%, #FFF5F9 0%, #ffffff 55%)'
-      }} />
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 50% 60% at 10% 40%, #F8F4FF 0%, transparent 60%)'
-      }} />
-
-      {/* ── VIDEO: desktop only — fills right half, bleeds to screen edge ── */}
+      {/* ── VIDEO: vollflächig im Hintergrund ── */}
       <motion.div
-        className="absolute top-0 right-0 h-full hidden md:block"
-        style={{ width: '58%', x: px, y: py }}
+        className="absolute inset-0"
         initial={{ opacity: 0 }}
         animate={ready ? { opacity: 1 } : {}}
-        transition={{ delay: 0.2, duration: 1.2 }}>
-
+        transition={{ duration: 1.2 }}>
         <video
           src="/hund.mp4"
           autoPlay
@@ -92,14 +69,16 @@ export default function Hero() {
           muted
           playsInline
           className="w-full h-full object-cover"
-          style={{ display: 'block' }}
         />
-
-        {/* Gradient mask: thin fade on left edge only, dog stays fully visible */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.5) 3%, rgba(255,255,255,0.05) 10%, transparent 16%)'
-        }} />
       </motion.div>
+
+      {/* Dunkler Gradient-Overlay für Lesbarkeit */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)'
+      }} />
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%)'
+      }} />
 
       {/* ── CONTENT ── */}
       <div className="relative max-w-7xl mx-auto px-8 md:px-16 py-24 w-full">
@@ -108,16 +87,16 @@ export default function Hero() {
           {/* Tag badge */}
           <motion.div {...stagger(0.1)} className="mb-6">
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full"
-              style={{ background: 'rgba(255,181,216,0.15)', border: '1px solid rgba(255,181,216,0.35)' }}>
+              style={{ background: 'rgba(255,181,216,0.2)', border: '1px solid rgba(255,181,216,0.5)', backdropFilter: 'blur(12px)' }}>
               <span className="text-sm">🐾</span>
-              <span className="font-nunito font-700 text-xs tracking-[0.25em] uppercase" style={{ color: '#d4789a' }}>Hundeschule · Karlsbad</span>
+              <span className="font-nunito font-700 text-xs tracking-[0.25em] uppercase" style={{ color: '#FFB5D8' }}>Hundeschule · Karlsbad</span>
             </div>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
-            className="font-pacifico leading-[1.05] mb-6"
-            style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5.5rem)', color: '#1a1025' }}
+            className="font-pacifico leading-[1.05] mb-6 text-white"
+            style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5.5rem)', textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}
             initial={{ opacity: 0, y: 50 }}
             animate={ready ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
@@ -131,7 +110,7 @@ export default function Hero() {
           {/* Subtitle */}
           <motion.p {...stagger(0.42)}
             className="font-nunito font-400 mb-7 leading-relaxed"
-            style={{ fontSize: 'clamp(1rem, 1.3vw, 1.15rem)', maxWidth: '38ch', color: '#7a6b8a' }}>
+            style={{ fontSize: 'clamp(1rem, 1.3vw, 1.15rem)', maxWidth: '38ch', color: 'rgba(255,255,255,0.85)' }}>
             Professionelle Hundeschule in Karlsbad — liebevolle Ausbildung für Ihren Vierbeiner.
           </motion.p>
 
@@ -139,7 +118,7 @@ export default function Hero() {
           <motion.div {...stagger(0.52)} className="flex flex-wrap gap-2 mb-8">
             {['Erfahrene Trainerin', 'Positive Verstärkung', 'Alle Rassen'].map(chip => (
               <span key={chip} className="font-nunito font-600 text-xs px-3.5 py-1.5 rounded-full"
-                style={{ background: '#f5f0ff', border: '1px solid #e8dff5', color: '#9b85c4' }}>
+                style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: 'white', backdropFilter: 'blur(8px)' }}>
                 {chip}
               </span>
             ))}
@@ -148,7 +127,7 @@ export default function Hero() {
           {/* Google badge + open */}
           <motion.div {...stagger(0.62)} className="flex flex-wrap items-center gap-3 mb-9">
             <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl"
-              style={{ background: 'white', border: '1px solid #ece8f5', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
+              style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', backdropFilter: 'blur(12px)' }}>
               <svg width="15" height="15" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -156,13 +135,13 @@ export default function Hero() {
                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
               </svg>
               <div className="flex text-yellow-400 text-sm">★★★★★</div>
-              <span className="font-nunito font-800 text-sm" style={{ color: '#1a1025' }}>4.9</span>
-              <span className="font-nunito text-xs" style={{ color: '#b0a0c0' }}>· 14 Bewertungen</span>
+              <span className="font-nunito font-800 text-sm text-white">5.0</span>
+              <span className="font-nunito text-xs" style={{ color: 'rgba(255,255,255,0.6)' }}>· 14 Bewertungen</span>
             </div>
             <div className="flex items-center gap-1.5 px-3 py-2.5 rounded-xl"
-              style={{ background: '#f0fdf8', border: '1px solid #bbf7d0' }}>
+              style={{ background: 'rgba(74,222,128,0.2)', border: '1px solid rgba(74,222,128,0.4)', backdropFilter: 'blur(8px)' }}>
               <div className="w-1.5 h-1.5 rounded-full bg-green-400" style={{ boxShadow: '0 0 6px #4ade80' }} />
-              <span className="font-nunito font-700 text-green-700 text-xs">Heute geöffnet</span>
+              <span className="font-nunito font-700 text-green-300 text-xs">Heute geöffnet</span>
             </div>
           </motion.div>
 
@@ -176,9 +155,9 @@ export default function Hero() {
               Termin buchen →
             </motion.a>
             <motion.a href="tel:01736853692"
-              className="font-nunito font-700 text-sm px-7 py-4 rounded-2xl flex items-center gap-2"
-              style={{ background: 'white', border: '1px solid #ece8f5', color: '#5a4a6a', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
-              whileHover={{ scale: 1.05, boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}
+              className="font-nunito font-700 text-sm px-7 py-4 rounded-2xl flex items-center gap-2 text-white"
+              style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', backdropFilter: 'blur(12px)' }}
+              whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.25)' }}
               whileTap={{ scale: 0.97 }}>
               <span>📞</span> 0173 6853692
             </motion.a>
@@ -186,7 +165,7 @@ export default function Hero() {
 
           {/* Stats */}
           <motion.div {...stagger(0.9)} className="flex gap-8 mt-10 pt-8"
-            style={{ borderTop: '1px solid #ede8f5' }}>
+            style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }}>
             <StatItem target={200} suffix="+" label="Ausgebildete Hunde" duration={4000} />
             <StatItem target={10} suffix=" J." label="Erfahrung" duration={3500} />
             <StatItem target={5.0} suffix="★" label="Google Rating" decimals={1} duration={3000} />
@@ -195,42 +174,23 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── VIDEO: mobile only — contained block below text ── */}
-      <motion.div
-        className="md:hidden w-full px-6 pb-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={ready ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: 0.5, duration: 0.8 }}>
-        <div className="rounded-3xl overflow-hidden w-full"
-          style={{ aspectRatio: '4/3', boxShadow: '0 12px 40px rgba(255,181,216,0.25)' }}>
-          <video
-            src="/hund.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </motion.div>
-
-      {/* Floating badges over video */}
+      {/* Floating badges */}
       <motion.div
         className="absolute hidden md:flex items-center gap-2 px-4 py-2.5 rounded-2xl"
         style={{
           right: '6%', top: '22%',
-          background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)',
-          border: '1px solid rgba(255,181,216,0.25)', boxShadow: '0 8px 32px rgba(0,0,0,0.08)'
+          background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(16px)',
+          border: '1px solid rgba(255,255,255,0.25)', boxShadow: '0 8px 32px rgba(0,0,0,0.15)'
         }}
         initial={{ opacity: 0, y: -20 }}
         animate={ready ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 1, duration: 0.8 }}>
         <motion.div animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
           className="flex items-center gap-2">
-          <span className="text-xl">✂️</span>
+          <span className="text-xl">🎓</span>
           <div>
-            <p className="font-nunito font-800 text-xs" style={{ color: '#1a1025' }}>Profi-Training</p>
-            <p className="font-nunito text-xs" style={{ color: '#b0a0c0' }}>Alle Rassen</p>
+            <p className="font-nunito font-800 text-xs text-white">Profi-Training</p>
+            <p className="font-nunito text-xs" style={{ color: 'rgba(255,255,255,0.6)' }}>Alle Rassen</p>
           </div>
         </motion.div>
       </motion.div>
@@ -239,18 +199,18 @@ export default function Hero() {
         className="absolute hidden md:flex items-center gap-2 px-4 py-2.5 rounded-2xl"
         style={{
           right: '10%', bottom: '20%',
-          background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(16px)',
-          border: '1px solid rgba(197,181,234,0.3)', boxShadow: '0 8px 32px rgba(0,0,0,0.08)'
+          background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(16px)',
+          border: '1px solid rgba(197,181,234,0.4)', boxShadow: '0 8px 32px rgba(0,0,0,0.15)'
         }}
         initial={{ opacity: 0, y: 20 }}
         animate={ready ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 1.15, duration: 0.8 }}>
         <motion.div animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut', delay: 1 }}
           className="flex items-center gap-2">
-          <span className="text-xl">🌿</span>
+          <span className="text-xl">❤️</span>
           <div>
-            <p className="font-nunito font-800 text-xs" style={{ color: '#1a1025' }}>Positive Methoden</p>
-            <p className="font-nunito text-xs" style={{ color: '#b0a0c0' }}>Liebevoll & effektiv</p>
+            <p className="font-nunito font-800 text-xs text-white">Positive Methoden</p>
+            <p className="font-nunito text-xs" style={{ color: 'rgba(255,255,255,0.6)' }}>Liebevoll & effektiv</p>
           </div>
         </motion.div>
       </motion.div>
