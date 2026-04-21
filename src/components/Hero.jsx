@@ -54,7 +54,7 @@ export default function Hero() {
   })
 
   return (
-    <section id="home" className="relative min-h-[85vh] flex items-center overflow-hidden">
+    <section id="home" className="relative flex items-center overflow-hidden" style={{ height: '70vh', minHeight: '560px' }}>
 
       {/* ── VIDEO: vollflächig im Hintergrund ── */}
       <motion.div
@@ -75,9 +75,9 @@ export default function Hero() {
 
 
       {/* ── CONTENT ── */}
-      <div className="relative max-w-7xl mx-auto px-8 md:px-16 py-12 w-full">
+      <div className="relative max-w-7xl mx-auto px-8 md:px-16 py-6 w-full">
         <div style={{ display: 'inline-block', width: '420px', maxWidth: '90vw' }}>
-        <div className="rounded-3xl p-5 md:p-7" style={{
+        <div className="rounded-3xl p-4 md:p-5" style={{
           background: 'rgba(255,255,255,0.18)',
           backdropFilter: 'blur(24px)',
           WebkitBackdropFilter: 'blur(24px)',
