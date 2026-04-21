@@ -58,7 +58,7 @@ export default function Hero() {
 
       {/* VIDEO vollflächig */}
       <motion.div className="absolute inset-0"
-        initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ duration: 1.2 }}>
+        initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ duration: 0.3 }}>
         <video src="/hund.mp4" autoPlay loop muted playsInline
           className="w-full h-full object-cover" style={{ filter: 'brightness(0.85)' }} />
       </motion.div>
