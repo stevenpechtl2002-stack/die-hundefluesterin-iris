@@ -29,8 +29,8 @@ function useCountUp(target, duration = 1800, decimals = 0) {
   return { count, ref }
 }
 
-function StatItem({ target, suffix, label, decimals = 0 }) {
-  const { count, ref } = useCountUp(target, 1600, decimals)
+function StatItem({ target, suffix, label, decimals = 0, duration = 1600 }) {
+  const { count, ref } = useCountUp(target, duration, decimals)
   return (
     <div ref={ref}>
       <p className="font-pacifico text-2xl" style={{
@@ -187,9 +187,9 @@ export default function Hero() {
           {/* Stats */}
           <motion.div {...stagger(0.9)} className="flex gap-8 mt-10 pt-8"
             style={{ borderTop: '1px solid #ede8f5' }}>
-            <StatItem target={500} suffix="+" label="Zufriedene Hunde" />
-            <StatItem target={8} suffix=" J." label="Erfahrung" />
-            <StatItem target={4.9} suffix="★" label="Google Rating" decimals={1} />
+            <StatItem target={500} suffix="+" label="Zufriedene Hunde" duration={4000} />
+            <StatItem target={8} suffix=" J." label="Erfahrung" duration={3500} />
+            <StatItem target={4.9} suffix="★" label="Google Rating" decimals={1} duration={3000} />
           </motion.div>
 
         </div>
