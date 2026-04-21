@@ -56,7 +56,7 @@ export default function Hero() {
 
         {/* Gradient mask: thin fade on left edge only, dog stays fully visible */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.7) 6%, rgba(255,255,255,0.1) 16%, transparent 26%)'
+          background: 'linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.5) 3%, rgba(255,255,255,0.05) 10%, transparent 16%)'
         }} />
       </motion.div>
 
