@@ -76,12 +76,13 @@ export default function Hero() {
 
       {/* ── CONTENT ── */}
       <div className="relative max-w-7xl mx-auto px-8 md:px-16 py-24 w-full">
-        <div className="max-w-xl rounded-3xl p-8 md:p-10" style={{
-          background: 'rgba(255,255,255,0.12)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255,255,255,0.25)',
-          boxShadow: '0 8px 40px rgba(0,0,0,0.15)'
+        <div style={{ display: 'inline-block', width: '420px', maxWidth: '90vw' }}>
+        <div className="rounded-3xl p-8 md:p-10" style={{
+          background: 'rgba(255,255,255,0.18)',
+          backdropFilter: 'blur(24px)',
+          WebkitBackdropFilter: 'blur(24px)',
+          border: '1px solid rgba(255,255,255,0.3)',
+          boxShadow: '0 8px 40px rgba(0,0,0,0.18)'
         }}>
 
           {/* Tag badge */}
@@ -171,6 +172,7 @@ export default function Hero() {
             <StatItem target={5.0} suffix="★" label="Google Rating" decimals={1} duration={3000} />
           </motion.div>
 
+        </div>
         </div>
       </div>
 
