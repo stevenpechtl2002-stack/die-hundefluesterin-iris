@@ -69,7 +69,7 @@ export default function Hero() {
           muted
           playsInline
           className="w-full h-full object-cover"
-          style={{ filter: 'brightness(1.1)' }}
+          style={{ filter: 'brightness(1)' }}
         />
       </motion.div>
 
